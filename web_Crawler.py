@@ -2,6 +2,7 @@ import requests
 
 links = []
 i=0
+seedpage = raw_input('Enter the link of your seed page:')
 
 def crawl(sourceCode):
 	next_link = getNextTarget(sourceCode)
@@ -23,6 +24,4 @@ def getNextTarget(sourceCode):
 	startLink = sourceCode.find("<a href=") + 9
 	endLink = sourceCode.find('"', startLink)
 	return sourceCode[startLink:endLink]
-
-
 	
