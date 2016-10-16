@@ -40,7 +40,7 @@ def updateDictionary(pageLink, searchContent):    #this function updates keyword
 	sourcecode = getSource(pageLink)
 	wordsList = sourceCode.split()
 	for word in wordsList:
-		if word in searchContent.keys():
+		if (word in searchContent.keys()):
 			(searchContent['word']).append(pageLink)
 		else:
 			searchContent.update({'word':[]})
@@ -52,3 +52,20 @@ while (indexOfCurrentLink < thresholdNumber) :
 	crawl(getSource(links[indexOfCurrentLink]))
 	updateDictionary(links[indexOfCurrentLink], searchContent)
 	indexOfCurrentLink += 1
+
+query = raw_input("Enter your search query: ")
+resultLinks = []
+
+queryWords = query.split()
+for word in queryWords:
+	if (word in searchContent.keys()):
+		for relatedLinks in searchContent['word']:
+			resultLinks.append(relatedLinks)
+	else:
+		continue
+
+if (resultLinks != []):
+	for results in resultLinks:
+		print(results)
+else:
+	print("No results found")
