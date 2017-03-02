@@ -14,6 +14,7 @@ while True:
 		print("Enter a valid positive integer")
 
 #defining functipons-
+#define this ----------------------------------------------------
 
 def crawl(sourceCode):
 	next_link = getNextTarget(sourceCode)
