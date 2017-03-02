@@ -6,6 +6,7 @@ countOnLinks=1	#keeps count on total count of entries in 'links' list
 indexOfCurrentLink=0	#stores the index of the link (in 'links' list) that is currently being crawled
 searchContent = {}   #dictionary that stores keywords of search as keys and list of links whose sourcecode had its mention as value.
 
+#check git functioning
 while True:
 	try:
 		thresholdNumber = int(raw_input('Enter your threshold number: '))   #determines the number of links starting from index 0 that will be crawled.
